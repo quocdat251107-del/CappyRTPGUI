@@ -8,14 +8,14 @@ buttons:
   overworld:
     line1: "🌲 Overworld"
     icon-type: "PATH"
-    icon-value: "textures/blocks/grass_side_carried"
+    icon-value: "textures/blocks/dirt"
 
   nether:
     line1: "🔥 Nether"
     icon-type: "PATH"
     icon-value: "textures/blocks/netherrack"
 
-  the_end:
+  end:
     line1: "🌌 The End"
     icon-type: "PATH"
     icon-value: "textures/blocks/end_stone"
