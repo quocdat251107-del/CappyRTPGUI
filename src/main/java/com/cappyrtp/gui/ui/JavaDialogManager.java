@@ -62,10 +62,9 @@ public class JavaDialogManager {
         }
 
         Destination defaultDest = config.getDestination(selectedDestId);
-        Material iconMaterial = (defaultDest != null) ? defaultDest.javaIcon() : Material.GRASS_BLOCK;
 
-        // Build the 3D item body (Naturally centered by removing forced bounds)
-        ItemDialogBody itemBody = DialogBody.item(new ItemStack(iconMaterial))
+        // Build the 3D item body (Use Ender Pearl as the global teleport icon)
+        ItemDialogBody itemBody = DialogBody.item(new ItemStack(Material.ENDER_PEARL))
                 .showDecorations(false)
                 .showTooltip(false)
                 .build();
