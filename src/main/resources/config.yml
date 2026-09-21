@@ -1,0 +1,43 @@
+# ======================================================= #
+#                    CAPPY RTP GUI CONFIG                 #
+# ======================================================= #
+
+dialog:
+  title: "<gradient:#55ff55:#00aa00>❖ RANDOM TELEPORT ❖</gradient>"
+  description: "<gray>Select the world you wish to teleport to:</gray>"
+  default-destination: "overworld"
+
+chest-gui:
+  title: "<dark_gray>» <green><bold>Random Teleport</bold>"
+  size: 27
+
+destinations:
+  overworld:
+    display-name: "<green>🌲 Overworld</green>"
+    world-name: "world"
+    java-icon: "GRASS_BLOCK"
+    gui-slot: 11
+    permission: "cappyrtp.world.overworld"
+
+  nether:
+    display-name: "<red>🔥 Nether</red>"
+    world-name: "world_nether"
+    java-icon: "NETHERRACK"
+    gui-slot: 13
+    permission: "cappyrtp.world.nether"
+
+  the_end:
+    display-name: "<light_purple>🌌 The End</light_purple>"
+    world-name: "world_the_end"
+    java-icon: "END_STONE"
+    gui-slot: 15
+    permission: "cappyrtp.world.end"
+
+buttons:
+  confirm: "<green>✔ Confirm</green>"
+  cancel: "<red>❌ Cancel</red>"
+
+messages:
+  no-permission: "<red>You do not have permission to RTP to this world!</red>"
+  teleporting: "<green>Finding a safe location and teleporting...</green>"
+  not-found: "<red>The specified world was not found in BetterRTP!</red>"

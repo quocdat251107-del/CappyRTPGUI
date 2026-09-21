@@ -1,0 +1,29 @@
+# Maven / Buid
+target/
+*.jar
+*.war
+*.ear
+*.class
+*.zip
+
+# IDEs (VS Code, IntelliJ, Eclipse)
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+.factorypath
+
+# Temporary / Extracted files
+apache-maven-*/
+lib/
+tmp.html
+better_rtp.txt
+
+# OS Generated
+.DS_Store
+Thumbs.db
+

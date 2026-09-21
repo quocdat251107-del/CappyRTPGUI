@@ -1,0 +1,21 @@
+# ======================================================= #
+#                 BEDROCK SIMPLE FORM GUI                 #
+# ======================================================= #
+title: "❖ RANDOM TELEPORT ❖"
+description: "Select the world you wish to teleport to:"
+
+buttons:
+  overworld:
+    line1: "🌲 Overworld"
+    icon-type: "PATH"
+    icon-value: "textures/blocks/grass_side_carried"
+
+  nether:
+    line1: "🔥 Nether"
+    icon-type: "PATH"
+    icon-value: "textures/blocks/netherrack"
+
+  the_end:
+    line1: "🌌 The End"
+    icon-type: "PATH"
+    icon-value: "textures/blocks/end_stone"
