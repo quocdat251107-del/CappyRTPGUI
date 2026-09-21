@@ -84,9 +84,9 @@ public class ConfigManager {
                 if (entry == null) continue;
 
                 String displayName = entry.getString("display-name", key);
-                String worldName = entry.getString("world-name", key);
+                String worldName = entry.getString("world", entry.getString("world-name", key));
                 String iconStr = entry.getString("java-icon", "GRASS_BLOCK");
-                int guiSlot = entry.getInt("gui-slot", 0);
+                int guiSlot = entry.getInt("chest-gui.gui-slot", entry.getInt("gui-slot", 0));
                 String permission = entry.getString("permission", "cappyrtp.world." + key);
 
                 Material icon;
@@ -97,7 +97,11 @@ public class ConfigManager {
                     icon = Material.GRASS_BLOCK;
                 }
 
-                destinations.put(key, new Destination(key, displayName, worldName, icon, guiSlot, permission));
+                String lore = entry.getString("dialog-card.lore", "");
+                String specs = entry.getString("dialog-card.specs", "");
+                String tip = entry.getString("dialog-card.tip", "");
+
+                destinations.put(key, new Destination(key, displayName, worldName, icon, guiSlot, permission, lore, specs, tip));
             }
         }
 

@@ -26,7 +26,7 @@ import java.util.List;
 
 /**
  * Builds and displays Paper Dialog API dialogs for Java Edition players.
- * Renders a 3D rotating item (centered) above a multiple-choice world selection list.
+ * Renders a centered 3D rotating item, world selector, and information card.
  */
 public class JavaDialogManager {
 
@@ -82,14 +82,26 @@ public class JavaDialogManager {
             ));
         }
 
+        // The world selection bar
         SingleOptionDialogInput worldSelector = DialogInput.singleOption(
                 WORLD_SELECTION_KEY,
                 Component.empty(),
                 optionEntries
-        ).labelVisible(false).width(300).build();
+        ).labelVisible(false).build(); // Removing forced width allows it to flow naturally
 
-        // Native Minecraft dialogs only transmit radio button data when an ActionButton is pressed.
-        // Therefore, we use Confirm to directly teleport.
+        // Information Card (Lower Dialog Body)
+        // Uses the currently 'selected' (default) destination's specs.
+        Component infoBuilder = Component.empty();
+        if (defaultDest != null) {
+            infoBuilder = infoBuilder
+                    .append(MessageUtil.parse(defaultDest.lore())).append(Component.newline())
+                    .append(Component.newline())
+                    .append(MessageUtil.parse(defaultDest.specs())).append(Component.newline())
+                    .append(Component.newline())
+                    .append(MessageUtil.parse(defaultDest.tip()));
+        }
+        final Component infoCardComponent = infoBuilder;
+
         ActionButton confirmBtn = ActionButton.create(
                 MessageUtil.parse(config.getConfirmButton()),
                 null,
@@ -113,7 +125,12 @@ public class JavaDialogManager {
 
         Dialog dialog = Dialog.create(factory -> factory.empty()
                 .base(DialogBase.builder(titleComponent)
-                        .body(List.of(itemBody, DialogBody.plainMessage(descComponent)))
+                        // Structure: Centered 3D Icon -> Description -> Info Card
+                        .body(List.of(
+                                itemBody, 
+                                DialogBody.plainMessage(descComponent),
+                                DialogBody.plainMessage(infoCardComponent)
+                        ))
                         .inputs(List.of(worldSelector))
                         .afterAction(DialogBase.DialogAfterAction.CLOSE)
                         .canCloseWithEscape(true)

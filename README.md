@@ -1,3 +1,4 @@
+# CappyRTPGUI
 <div align="center">
   <h1>🌟 CappyRTPGUI 🌟</h1>
   <p><i>A modern, visually stunning, and multi-platform UI frontend for BetterRTP.</i></p>

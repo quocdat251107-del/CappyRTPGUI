@@ -37,6 +37,10 @@ public class CappyRTPGUI extends JavaPlugin {
         betterRTPHook = new BetterRTPHook(getLogger());
         betterRTPHook.init();
 
+        // Initialize bStats Metrics
+        int pluginId = 34192;
+        new org.bstats.bukkit.Metrics(this, pluginId);
+
         floodgateHook = new FloodgateHook(getLogger());
         floodgateHook.init();
 

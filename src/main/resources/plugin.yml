@@ -3,7 +3,7 @@ version: '${project.version}'
 main: com.cappyrtp.gui.CappyRTPGUI
 api-version: '1.21'
 description: Modern visual UI frontend for BetterRTP
-authors: [Cappy]
+authors: [CappyBooMc]
 depend:
   - BetterRTP
 softdepend:

@@ -59,6 +59,13 @@
             <version>5.0.3</version>
             <scope>provided</scope>
         </dependency>
+        <!-- bStats Metrics -->
+        <dependency>
+            <groupId>org.bstats</groupId>
+            <artifactId>bstats-bukkit</artifactId>
+            <version>3.0.2</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -96,6 +103,29 @@
                         <goals>
                             <goal>run</goal>
                         </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- Shade and Relocate bStats -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.5.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <relocations>
+                                <relocation>
+                                    <pattern>org.bstats</pattern>
+                                    <shadedPattern>com.cappyrtp.gui.bstats</shadedPattern>
+                                </relocation>
+                            </relocations>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
