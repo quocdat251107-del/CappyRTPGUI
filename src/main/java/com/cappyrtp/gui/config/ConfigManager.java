@@ -22,7 +22,6 @@ public class ConfigManager {
     private String dialogDescription;
     private String defaultDestination;
     private String dialogLore;
-    private String dialogSpecs;
     private String dialogTip;
 
     // Chest GUI settings
@@ -66,7 +65,6 @@ public class ConfigManager {
         defaultDestination = config.getString("dialog.default-destination", "overworld");
         
         dialogLore = config.getString("dialog.card.lore", "<gray>Choose a dimension below to embark on your journey.</gray>");
-        dialogSpecs = config.getString("dialog.card.specs", "<gray>Safe Landing: <green>Active</green>\n<gray>Random Radius: <yellow>World Specific</yellow></gray>");
         dialogTip = config.getString("dialog.card.tip", "<italic><dark_gray>Tip: Make sure you are well equipped before teleporting!</dark_gray></italic>");
 
         // Chest GUI section
@@ -147,7 +145,6 @@ public class ConfigManager {
     public String getDialogDescription() { return dialogDescription; }
     public String getDefaultDestination() { return defaultDestination; }
     public String getDialogLore() { return dialogLore; }
-    public String getDialogSpecs() { return dialogSpecs; }
     public String getDialogTip() { return dialogTip; }
 
     public String getChestGuiTitle() { return chestGuiTitle; }

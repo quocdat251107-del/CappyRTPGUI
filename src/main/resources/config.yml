@@ -14,7 +14,6 @@ dialog:
   # This text is generic for all worlds. Use \n to create new lines, or leave empty ("") to hide.
   card:
     lore: "<gray>Choose a dimension below to embark on your journey.</gray>"
-    specs: "<gray>Safe Landing: <green>Active</green>\n<gray>Random Radius: <yellow>World Specific</yellow></gray>"
     tip: "<italic><dark_gray>Tip: Make sure you are well equipped before teleporting!</dark_gray></italic>"
 
 chest-gui:

@@ -93,8 +93,6 @@ public class JavaDialogManager {
         Component infoBuilder = Component.empty()
                 .append(MessageUtil.parse(config.getDialogLore())).append(Component.newline())
                 .append(Component.newline())
-                .append(MessageUtil.parse(config.getDialogSpecs())).append(Component.newline())
-                .append(Component.newline())
                 .append(MessageUtil.parse(config.getDialogTip()));
         final Component infoCardComponent = infoBuilder;
 
