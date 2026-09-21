@@ -48,7 +48,19 @@ public class CappyRTPGUI extends JavaPlugin {
         viaVersionHook.init();
 
         // Initialize UI managers
-        javaDialogManager = new JavaDialogManager(this);
+        boolean hasDialogAPI = false;
+        try {
+            Class.forName("io.papermc.paper.dialog.Dialog");
+            hasDialogAPI = true;
+        } catch (ClassNotFoundException ignored) {}
+
+        if (hasDialogAPI) {
+            javaDialogManager = new JavaDialogManager(this);
+            getLogger().info("Paper Dialog API found! Enabling modern Java 3D UI.");
+        } else {
+            getLogger().info("Paper Dialog API not found (Legacy server). Falling back to Chest GUI for Java players.");
+        }
+        
         bedrockFormManager = new BedrockFormManager(this);
         chestGUIManager = new ChestGUIManager(this); // Registers listeners
 

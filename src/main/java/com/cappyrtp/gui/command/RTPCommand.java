@@ -70,11 +70,11 @@ public class RTPCommand implements CommandExecutor, TabCompleter {
         if (plugin.getFloodgateHook().isAvailable() && plugin.getFloodgateHook().isBedrockPlayer(player)) {
             // Bedrock player -> Floodgate SimpleForm
             plugin.getBedrockFormManager().showForm(player);
-        } else if (!plugin.getViaVersionHook().supportsDialogAPI(player)) {
-            // Older Java client -> Chest GUI Fallback
+        } else if (plugin.getJavaDialogManager() == null || !plugin.getViaVersionHook().supportsDialogAPI(player)) {
+            // Older Java Server OR Older Java Client -> Chest GUI Fallback
             plugin.getChestGUIManager().showGUI(player);
         } else {
-            // Native Java client (1.21.3+) -> Paper Dialog
+            // Native Java client (1.21.3+) on modern server -> Paper Dialog
             plugin.getJavaDialogManager().showDialog(player, null);
         }
 
