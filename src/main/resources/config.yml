@@ -25,7 +25,7 @@ destinations:
     display-name: "<green>Overworld"
     world: "world"
     permission: "cappyrtp.world.overworld"
-    java-icon: DIRT
+    java-icon: GRASS_BLOCK
     chest-gui:
       gui-slot: 11
 

@@ -8,7 +8,7 @@ buttons:
   overworld:
     line1: "🌲 Overworld"
     icon-type: "PATH"
-    icon-value: "textures/blocks/dirt"
+    icon-value: "textures/blocks/grass_side_carried"
 
   nether:
     line1: "🔥 Nether"
