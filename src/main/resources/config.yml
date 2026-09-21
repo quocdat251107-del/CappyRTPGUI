@@ -7,13 +7,15 @@
 
 dialog:
   title: "<gradient:#55ff55:#00aa00>❖ RANDOM TELEPORT ❖</gradient>"
-  # The text displayed above the world selector
   description: "<gray>Select the world you wish to teleport to:</gray>"
-  # The world selected by default when the GUI opens.
-  # NOTE: Due to vanilla Minecraft client limitations, radio buttons do not send live 
-  # updates to the server. Therefore, the Information Card below will statically display 
-  # the info of THIS default destination when the menu first opens.
   default-destination: "overworld"
+  
+  # The Information Card displayed in the middle of the Dialog API.
+  # This text is generic for all worlds. Use \n to create new lines, or leave empty ("") to hide.
+  card:
+    lore: "<gray>Choose a dimension below to embark on your journey.</gray>"
+    specs: "<gray>Safe Landing: <green>Active</green>\n<gray>Random Radius: <yellow>World Specific</yellow></gray>"
+    tip: "<italic><dark_gray>Tip: Make sure you are well equipped before teleporting!</dark_gray></italic>"
 
 chest-gui:
   title: "<dark_gray>» <green><bold>Random Teleport</bold>"
@@ -24,16 +26,9 @@ destinations:
     display-name: "<green>Overworld"
     world: "world"
     permission: "cappyrtp.world.overworld"
-    # The 3D item displayed in the Java Dialog API
     java-icon: DIRT
     chest-gui:
       gui-slot: 11
-    # The Information Card displayed in the middle of the Dialog API.
-    # Fully customizable! Use \n to create new lines, or leave empty ("") to hide.
-    dialog-card:
-      lore: "<gray>Lush biomes and vast oceans await.</gray>"
-      specs: "<gray>Safe Landing: <green>Active</green>\n<gray>Radius: <yellow>10000</yellow></gray>"
-      tip: "<italic><dark_gray>Tip: Watch out for creepers at night!</dark_gray></italic>"
 
   nether:
     display-name: "<red>The Nether"
@@ -42,10 +37,6 @@ destinations:
     java-icon: NETHERRACK
     chest-gui:
       gui-slot: 13
-    dialog-card:
-      lore: "<gray>A treacherous inferno filled with danger.</gray>"
-      specs: "<gray>Safe Landing: <green>Active</green>\n<gray>Radius: <yellow>5000</yellow></gray>"
-      tip: "<italic><dark_gray>Tip: Never sleep in a bed here!</dark_gray></italic>"
 
   end:
     display-name: "<light_purple>The End"
@@ -54,10 +45,6 @@ destinations:
     java-icon: END_STONE
     chest-gui:
       gui-slot: 15
-    dialog-card:
-      lore: "<gray>A dark void scattered with floating islands.</gray>"
-      specs: "<gray>Safe Landing: <green>Active</green>\n<gray>Radius: <yellow>2500</yellow></gray>"
-      tip: "<italic><dark_gray>Tip: Keep your eyes on the ground.</dark_gray></italic>"
 
 buttons:
   confirm: "<green>✔ Confirm</green>"

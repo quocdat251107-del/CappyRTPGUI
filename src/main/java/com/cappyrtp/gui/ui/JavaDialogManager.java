@@ -89,16 +89,13 @@ public class JavaDialogManager {
         ).labelVisible(false).build();
 
         // Information Card (Lower Dialog Body)
-        // Uses the currently 'selected' (default) destination's specs.
-        Component infoBuilder = Component.empty();
-        if (defaultDest != null) {
-            infoBuilder = infoBuilder
-                    .append(MessageUtil.parse(defaultDest.lore())).append(Component.newline())
-                    .append(Component.newline())
-                    .append(MessageUtil.parse(defaultDest.specs())).append(Component.newline())
-                    .append(Component.newline())
-                    .append(MessageUtil.parse(defaultDest.tip()));
-        }
+        // Uses the generic strings from config.
+        Component infoBuilder = Component.empty()
+                .append(MessageUtil.parse(config.getDialogLore())).append(Component.newline())
+                .append(Component.newline())
+                .append(MessageUtil.parse(config.getDialogSpecs())).append(Component.newline())
+                .append(Component.newline())
+                .append(MessageUtil.parse(config.getDialogTip()));
         final Component infoCardComponent = infoBuilder;
 
         ActionButton confirmBtn = ActionButton.create(

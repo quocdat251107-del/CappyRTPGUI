@@ -8,8 +8,5 @@ public record Destination(
         String worldName,
         Material javaIcon,
         int guiSlot,
-        String permission,
-        String lore,
-        String specs,
-        String tip
+        String permission
 ) {}

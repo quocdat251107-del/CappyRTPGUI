@@ -21,6 +21,9 @@ public class ConfigManager {
     private String dialogTitle;
     private String dialogDescription;
     private String defaultDestination;
+    private String dialogLore;
+    private String dialogSpecs;
+    private String dialogTip;
 
     // Chest GUI settings
     private String chestGuiTitle;
@@ -61,6 +64,10 @@ public class ConfigManager {
         dialogTitle = config.getString("dialog.title", "<gradient:#55ff55:#00aa00>❖ RANDOM TELEPORT ❖</gradient>");
         dialogDescription = config.getString("dialog.description", "<gray>Select the world you wish to teleport to:</gray>");
         defaultDestination = config.getString("dialog.default-destination", "overworld");
+        
+        dialogLore = config.getString("dialog.card.lore", "<gray>Choose a dimension below to embark on your journey.</gray>");
+        dialogSpecs = config.getString("dialog.card.specs", "<gray>Safe Landing: <green>Active</green>\n<gray>Random Radius: <yellow>World Specific</yellow></gray>");
+        dialogTip = config.getString("dialog.card.tip", "<italic><dark_gray>Tip: Make sure you are well equipped before teleporting!</dark_gray></italic>");
 
         // Chest GUI section
         chestGuiTitle = config.getString("chest-gui.title", "<dark_gray>» <green><bold>Random Teleport</bold>");
@@ -68,7 +75,7 @@ public class ConfigManager {
 
         // Buttons
         confirmButton = config.getString("buttons.confirm", "<green>✔ Confirm</green>");
-        cancelButton = config.getString("buttons.cancel", "<red>❌ Cancel</red>");
+        cancelButton = config.getString("buttons.cancel", "<red>✖ Cancel</red>");
 
         // Messages
         msgNoPermission = config.getString("messages.no-permission", "<red>You do not have permission to RTP to this world!</red>");
@@ -97,11 +104,7 @@ public class ConfigManager {
                     icon = Material.GRASS_BLOCK;
                 }
 
-                String lore = entry.getString("dialog-card.lore", "");
-                String specs = entry.getString("dialog-card.specs", "");
-                String tip = entry.getString("dialog-card.tip", "");
-
-                destinations.put(key, new Destination(key, displayName, worldName, icon, guiSlot, permission, lore, specs, tip));
+                destinations.put(key, new Destination(key, displayName, worldName, icon, guiSlot, permission));
             }
         }
 
@@ -143,6 +146,9 @@ public class ConfigManager {
     public String getDialogTitle() { return dialogTitle; }
     public String getDialogDescription() { return dialogDescription; }
     public String getDefaultDestination() { return defaultDestination; }
+    public String getDialogLore() { return dialogLore; }
+    public String getDialogSpecs() { return dialogSpecs; }
+    public String getDialogTip() { return dialogTip; }
 
     public String getChestGuiTitle() { return chestGuiTitle; }
     public int getChestGuiSize() { return chestGuiSize; }
