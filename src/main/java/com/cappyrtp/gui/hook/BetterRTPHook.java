@@ -68,8 +68,8 @@ public class BetterRTPHook {
             }
 
             // Execute teleport via official BetterRTP API directly
-            CommandSender sender = Bukkit.getConsoleSender();
-            RTPSetupInformation setupInfo = new RTPSetupInformation(world, sender, player, true);
+            
+            RTPSetupInformation setupInfo = new RTPSetupInformation(world, player, player, true);
             
             // Do NOT use BetterRTP.getInstance(). Use the cached real plugin instance.
             pluginInstance.getRTP().start(setupInfo);
