@@ -24,7 +24,7 @@ destinations:
   overworld:
     display-name: "<green>Overworld"
     world: "world"
-    permission: "cappyrtp.world.overworld"
+    permission: "betterrtp.world.world"
     java-icon: GRASS_BLOCK
     chest-gui:
       gui-slot: 11
@@ -32,7 +32,7 @@ destinations:
   nether:
     display-name: "<red>The Nether"
     world: "world_nether"
-    permission: "cappyrtp.world.nether"
+    permission: "betterrtp.world.world_nether"
     java-icon: NETHERRACK
     chest-gui:
       gui-slot: 13
@@ -40,7 +40,7 @@ destinations:
   end:
     display-name: "<light_purple>The End"
     world: "world_the_end"
-    permission: "cappyrtp.world.end"
+    permission: "betterrtp.world.world_the_end"
     java-icon: END_STONE
     chest-gui:
       gui-slot: 15

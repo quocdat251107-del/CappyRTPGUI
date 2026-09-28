@@ -1,5 +1,5 @@
 name: CappyRTPGUI
-version: '${project.version}'
+version: ''
 main: com.cappyrtp.gui.CappyRTPGUI
 api-version: '1.13'
 description: Modern visual UI frontend for BetterRTP
@@ -22,13 +22,3 @@ permissions:
   cappyrtp.reload:
     description: Allows reloading the plugin configuration
     default: op
-  cappyrtp.world.overworld:
-    description: Allows RTP to the Overworld
-    default: false
-  cappyrtp.world.nether:
-    description: Allows RTP to the Nether
-    default: false
-  cappyrtp.world.end:
-    description: Allows RTP to The End
-    default: false
-
