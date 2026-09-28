@@ -24,11 +24,11 @@ permissions:
     default: op
   cappyrtp.world.overworld:
     description: Allows RTP to the Overworld
-    default: true
+    default: false
   cappyrtp.world.nether:
     description: Allows RTP to the Nether
-    default: true
+    default: false
   cappyrtp.world.end:
     description: Allows RTP to The End
-    default: true
+    default: false
 
