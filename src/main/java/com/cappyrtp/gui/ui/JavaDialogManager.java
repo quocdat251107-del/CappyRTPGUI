@@ -47,7 +47,7 @@ public class JavaDialogManager {
 
         List<Destination> accessibleDests = new ArrayList<>();
         for (Destination dest : config.getDestinations().values()) {
-            if (player.hasPermission(dest.permission())) {
+            if (player.hasPermission("betterrtp.world." + dest.worldName())) {
                 accessibleDests.add(dest);
             }
         }
@@ -149,7 +149,7 @@ public class JavaDialogManager {
             return;
         }
 
-        if (!player.hasPermission(dest.permission())) {
+        if (!player.hasPermission("betterrtp.world." + dest.worldName())) {
             MessageUtil.send(player, config.getMsgNoPermission());
             return;
         }

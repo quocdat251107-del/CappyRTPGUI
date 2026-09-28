@@ -7,6 +7,5 @@ public record Destination(
         String displayName,
         String worldName,
         Material javaIcon,
-        int guiSlot,
-        String permission
+        int guiSlot
 ) {}

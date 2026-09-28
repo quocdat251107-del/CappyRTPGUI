@@ -33,7 +33,7 @@ public class BedrockFormManager {
 
         List<Destination> accessibleDests = new ArrayList<>();
         for (Destination dest : config.getDestinations().values()) {
-            if (player.hasPermission(dest.permission())) {
+            if (player.hasPermission("betterrtp.world." + dest.worldName())) {
                 accessibleDests.add(dest);
             }
         }

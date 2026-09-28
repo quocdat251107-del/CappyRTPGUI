@@ -53,7 +53,7 @@ public class ChestGUIManager implements Listener {
 
         // Collect accessible destinations and place in inventory
         for (Destination dest : config.getDestinations().values()) {
-            if (player.hasPermission(dest.permission())) {
+            if (player.hasPermission("betterrtp.world." + dest.worldName())) {
                 ItemStack item = new ItemStack(dest.javaIcon());
                 ItemMeta meta = item.getItemMeta();
                 if (meta != null) {
@@ -118,7 +118,7 @@ public class ChestGUIManager implements Listener {
         }
 
         // Permission check
-        if (!player.hasPermission(dest.permission())) {
+        if (!player.hasPermission("betterrtp.world." + dest.worldName())) {
             MessageUtil.send(player, config.getMsgNoPermission());
             return;
         }
